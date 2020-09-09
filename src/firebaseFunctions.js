@@ -14,7 +14,7 @@ export async function signInWithEmail(firebase, email, password) {
 }
 
 export async function sendMessage(firebase, message, userId, chatRoomId = 'cr1', attachments = null, type = 'text') {
-    return await firebase.push('chatRooms/' + chatRoomId + '/messages', {
+    return await firebase.push('chatRooms/messages', {
         type: type,
         message: message,
         date: Date(),
@@ -27,7 +27,7 @@ export async function uploadAttachment(firebase, files, userId, chatRoomId = 'cr
     await firebase.uploadFiles(
         chatRoomId,
         files,
-        'chatRooms/' + chatRoomId + '/attachments',
+        'chatRooms/attachments',
         {
             //name: (file) => `${this.props.auth.uid}-${Date.now()}`,
             name: (file) => {
