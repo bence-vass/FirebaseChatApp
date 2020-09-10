@@ -10,29 +10,25 @@ class SignIn extends Component {
         this.state = {
             email: 'test@test.com',
             password: 'Password123',
+            error: '',
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     async handleSubmit(event) {
-        console.log(this.state)
-        console.log(this.props)
         event.preventDefault();
+        this.setState({error: ''})
 
         await signInWithEmail(
             this.props.firebase,
             this.state.email,
             this.state.password,
         ).then(res => {
-
-            console.log('res')
-            console.log(res)
             this.props.history.push('/')
 
         }).catch(err => {
-            console.log('err')
-            console.log(err)
+            this.setState({error: err})
         })
 
 
@@ -64,6 +60,13 @@ class SignIn extends Component {
                     <br/>
 
                     <input type="submit" value="Sign In"/>
+
+                    {this.state.error ?
+                        <div>{this.state.error.message}</div>
+                        :
+                        null
+                    }
+
                 </form>
             </div>
         );
