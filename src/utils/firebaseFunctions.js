@@ -13,14 +13,28 @@ export async function signInWithEmail(firebase, email, password) {
     })
 }
 
-export async function sendMessage(firebase, message, userId, chatRoomId = 'cr1', attachments = null, type = 'text') {
-    return await firebase.push('chatRooms/messages', {
-        type: type,
-        message: message,
-        date: Date(),
-        user: userId,
-        attachments: attachments
+export async function sendMessage(firebase, message, senderId, receiverId) {
+    return await firebase.push('users/'+receiverId+'/chats', {
+        text: message,
+        date_created: Date(),
+        user: senderId,
     })
+}
+
+export async function sendVipMessage(firebase, message, senderId) {
+    let users = firebase.database().ref('users')
+    users.once('value', snapshot=>{
+        snapshot.forEach(childSnapshot=>{
+            console.log(childSnapshot.key)
+            firebase.push('users/'+childSnapshot.key+'/chats', {
+                text: message,
+                date_created: Date(),
+                user: senderId,
+            })
+
+        })
+    })
+
 }
 
 export async function assignUser(firebase, userId, role=null){

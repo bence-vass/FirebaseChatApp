@@ -15,7 +15,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import {ADMIN_DASHBOARD_URL, CHAT_URL, SIGN_IN_URL, SIGN_UP_URL, USERS_URL} from "./urlPaths";
+import {ADMIN_DASHBOARD_URL, CHAT_URL, SIGN_IN_URL, SIGN_UP_URL,} from "./urlPaths";
 
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
@@ -46,8 +46,8 @@ export default function App() {
               <Switch>
                   <Route exact path={SIGN_UP_URL}><SignUp/></Route>
                   <Route exact path={SIGN_IN_URL}><SignIn/></Route>
-                  <Route exact path={CHAT_URL}><Chat/></Route>
-                  <Route exact path={USERS_URL}><UserList/></Route>
+                  <Route exact path={CHAT_URL+'/:userId'}><Chat/></Route>
+                  <Route exact path={CHAT_URL}><UserList/></Route>
                   <Route exact path={ADMIN_DASHBOARD_URL}><AdminDashboard/></Route>
                   <Route path={'/'}><Home/></Route>
               </Switch>

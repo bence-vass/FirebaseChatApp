@@ -7,23 +7,43 @@ import {ADMIN_DASHBOARD_URL, CHAT_URL, SIGN_IN_URL, SIGN_UP_URL} from "../urlPat
 
 class Navbar extends Component {
     render() {
-        const {auth} = this.props
+        const {auth, profile} = this.props
         return (
             <div>
                 {isLoaded(auth) && isEmpty(auth) ?
-                    <ul>
-                        <Link to={SIGN_UP_URL}><li>Sign Up</li></Link>
-                        <Link to={SIGN_IN_URL}><li>Sign In</li></Link>
-                    </ul>
-                    :
-                    <ul>
-                        <Link to={CHAT_URL}><li>Chat</li></Link>
-                        <Link to={ADMIN_DASHBOARD_URL}><li>Dashboard</li></Link>
+                    <div>
+                        <ul>
+                            <Link to={SIGN_UP_URL}>
+                                <li>Sign Up</li>
+                            </Link>
+                            <Link to={SIGN_IN_URL}>
+                                <li>Sign In</li>
+                            </Link>
+                        </ul>
+                    </div>
 
-                        <li onClick={()=>{
-                            this.props.firebase.logout()
-                        }}>Logout</li>
-                    </ul>
+                    :
+                    <div>
+                        <h3>Logged in: {auth.email}</h3>
+                        {profile.role ?
+                            <span>Role: {profile.role}</span>
+                            :
+                            null
+                        }
+                        <ul>
+                            <Link to={CHAT_URL}>
+                                <li>Chat</li>
+                            </Link>
+                            <Link to={ADMIN_DASHBOARD_URL}>
+                                <li>Dashboard</li>
+                            </Link>
+
+                            <li onClick={() => {
+                                this.props.firebase.logout()
+                            }}>Logout
+                            </li>
+                        </ul>
+                    </div>
                 }
             </div>
         );
