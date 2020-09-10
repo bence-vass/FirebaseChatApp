@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {signInWithEmail} from "../firebaseFunctions";
+import {signInWithEmail} from "../utils/firebaseFunctions";
 import {compose} from "redux";
 import {withRouter} from "react-router-dom";
 import {withFirestore} from "react-redux-firebase";

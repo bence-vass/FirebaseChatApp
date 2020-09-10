@@ -52,3 +52,9 @@ export async function uploadAttachment(firebase, files, userId, chatRoomId = 'cr
 
 }
 
+export async function assignUser(firebase, userId, role=null){
+   return await firebase.database().ref('users/'+userId).update({
+       role: role
+   })
+}
+

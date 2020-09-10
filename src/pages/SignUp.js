@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {compose} from "redux";
 import {withRouter} from "react-router-dom";
 import {withFirestore} from "react-redux-firebase";
-import {connect} from "react-redux";
-import {signUpWithEmail} from "../firebaseFunctions";
+import {signUpWithEmail} from "../utils/firebaseFunctions";
 
 class SignUp extends Component {
     constructor(props) {

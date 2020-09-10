@@ -4,7 +4,7 @@ import {withRouter, Redirect} from "react-router-dom";
 import { isEmpty, isLoaded, firebaseConnect} from "react-redux-firebase";
 import {connect} from "react-redux";
 import {SIGN_IN_URL} from "../urlPaths";
-import {sendMessage, uploadAttachment} from "../firebaseFunctions";
+import {sendMessage, uploadAttachment} from "../utils/firebaseFunctions";
 
 
 const MessageComponent = ({sender, userId, children}) => {
