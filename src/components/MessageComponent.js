@@ -7,7 +7,9 @@ const sentMessageStyle = {
     color: '#ffffff',
     backgroundColor: '#4287f5',
     width: '60%',
+    display: 'block',
     float: 'right',
+
 }
 
 const receivedMessageStyle = {
@@ -17,6 +19,9 @@ const receivedMessageStyle = {
     backgroundColor: '#e9e6d2',
     width: '60%',
     float: 'left',
+    display: 'block',
+
+
 }
 
 class MessageComponent extends Component {
