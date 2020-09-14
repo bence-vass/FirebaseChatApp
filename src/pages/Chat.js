@@ -30,8 +30,6 @@ class Chat extends Component {
                 let conv = [...Object.values(this.props.sentMessages), ...Object.values(this.props.receivedMessages)]
                     .sort((a, b) => new Date(a.date_created) - new Date(b.date_created))
                 this.setState({conversation: conv})
-                console.log('as')
-
             }
         }
         this.scrollToBottom();
