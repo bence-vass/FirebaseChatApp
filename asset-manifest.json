@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/FirebaseChatApp/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/FirebaseChatApp/static/js/main.f33a08a5.chunk.js",
+    "main.js.map": "/FirebaseChatApp/static/js/main.f33a08a5.chunk.js.map",
+    "runtime-main.js": "/FirebaseChatApp/static/js/runtime-main.ba671e2b.js",
+    "runtime-main.js.map": "/FirebaseChatApp/static/js/runtime-main.ba671e2b.js.map",
+    "static/js/2.7ca51148.chunk.js": "/FirebaseChatApp/static/js/2.7ca51148.chunk.js",
+    "static/js/2.7ca51148.chunk.js.map": "/FirebaseChatApp/static/js/2.7ca51148.chunk.js.map",
+    "index.html": "/FirebaseChatApp/index.html",
+    "precache-manifest.c55bcd1742c0955245e9aa180ab75555.js": "/FirebaseChatApp/precache-manifest.c55bcd1742c0955245e9aa180ab75555.js",
+    "service-worker.js": "/FirebaseChatApp/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/FirebaseChatApp/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.7ca51148.chunk.js.LICENSE.txt": "/FirebaseChatApp/static/js/2.7ca51148.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ba671e2b.js",
+    "static/js/2.7ca51148.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.f33a08a5.chunk.js"
+  ]
+}
