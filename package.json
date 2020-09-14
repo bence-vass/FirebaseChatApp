@@ -2,6 +2,7 @@
   "name": "react-redux-firebase-firestore-example",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://bence-vass.github.io/FirebaseChatApp",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -9,7 +10,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --single-quote --no-semi --trailing-comma none --write \"src/**/*.js\""
+    "format": "prettier --single-quote --no-semi --trailing-comma none --write \"src/**/*.js\"",
+    "predeploy": "npm run build",
+    "deploy": "GithubPagesConfig -d build"
   },
   "dependencies": {
     "firebase": "^7.6.1",

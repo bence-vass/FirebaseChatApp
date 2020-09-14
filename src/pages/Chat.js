@@ -17,6 +17,10 @@ class Chat extends Component {
         }
     }
 
+    scrollToBottom = () => {
+        this.messagesEnd.scrollIntoView();
+    }
+
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.sentMessages && this.props.receivedMessages) {
             if (
@@ -28,11 +32,10 @@ class Chat extends Component {
                 this.setState({conversation: conv})
             }
         }
+        this.scrollToBottom();
     }
 
     render() {
-        console.log(this.props)
-        console.log(this.state)
         const {auth, profile} = this.props
         if (isLoaded(auth)) {
             if (isEmpty(auth)) {
@@ -41,8 +44,10 @@ class Chat extends Component {
                 return (
                     <div>
                         <h1>Chat</h1>
-
-                        <div>
+                        <div style={{
+                            height: '50vh',
+                            overflowY: 'auto',
+                        }}>
                             {this.state.conversation ?
                                 <div>
                                     {this.state.conversation.map((e, i) => {
@@ -52,6 +57,7 @@ class Chat extends Component {
                                             </MessageComponent>
                                         )
                                     })}
+                                    <div style={{float: 'right'}} ref={e => this.messagesEnd = e}></div>
                                 </div>
                                 :
                                 <div>Write a message first</div>
